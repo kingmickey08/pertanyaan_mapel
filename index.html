@@ -21,25 +21,12 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            background-color: #007BFF;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Pertanyaan Acak</h1>
-        <p id="question">Tekan tombol di bawah untuk mendapatkan pertanyaan.</p>
-        <button onclick="showRandomQuestion()">Tampilkan Pertanyaan</button>
+        <p id="question">Loading question...</p>
     </div>
     <script>
         const questions = [
@@ -55,6 +42,9 @@
             const questionElement = document.getElementById('question');
             questionElement.textContent = questions[randomIndex];
         }
+
+        // Panggil fungsi ini saat halaman dimuat
+        window.onload = showRandomQuestion;
     </script>
 </body>
 </html>
